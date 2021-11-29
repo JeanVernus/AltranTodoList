@@ -1,38 +1,60 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html{
+  padding: 1em;
+  background-color: rgb(85,26,139);
+}
+
+body{
+  padding: 2em;
+  background-color: black;
+}
+
+.BoxTitle{
+  background-image: url("../Assets/background.1.png");
+  background-size:15vmax;
+  padding: 5em;
+  border: 10px rgb(85,26,139) solid;
+  border-radius: 50%;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.DisplayTitleHome{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.TitleHome{
+  font-family: "Lobster";
+  font-size: 5em;
+  text-decoration: underline rgb(85,26,139);
+  transform: translateY(150px)
+}
+
+.SubTitleHome{
+  font-family: "Lobster";
+  font-size: 3em;
+  text-decoration: underline rgb(85,26,139);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.SubTitleTaskslist{
+  font-family: "Lobster";
+  color: rgb(85,26,139);
+  font-size: 2em;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.DisplayImgTitle{
+  height: 250px;
+  width : 250px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.DisplayWindows{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
