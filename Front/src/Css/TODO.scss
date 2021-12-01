@@ -1,0 +1,54 @@
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/sunset.scss";
+
+.displayTodoList{
+    border-left: 4px rgb(85,26,139) solid;
+    border-right: 4px rgb(85,26,139) solid;
+
+}
+
+.DisplayNewTodo{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    opacity: 0.5
+}
+
+.DisplayNewTodo:HOVER{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    opacity: 1
+}
+
+.TitleNewTodo{
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: grey;
+    color: rgb(56, 12, 97);
+    font-family: "Lobster";
+    font-size: 3em;
+    text-align: center;
+    text-decoration: underline rgb(85,26,139) 4px;
+    padding-right: 4em;
+    font-family: "Lobster";
+
+}
+
+.SubTitleNewTodo{
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: grey;
+    color: rgb(85,26,139);
+    font-family: "Lobster";
+    font-size: 2em;
+    padding:1em;
+    text-align: center;
+}
+.DisplaySubTitle{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    width : 25%;
+    border-bottom: 4px grey solid;
+}

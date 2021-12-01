@@ -11,7 +11,7 @@ import TitlePenleft from './Assets/TitlePenLeft.png';
 import TitlePenRight from './Assets/TitlePenRight.png';
 import NewTask from "./Components/Newtask";
 import TODO from './Components/TODO';
-import './Css/App.css';
+import './Css/App.scss';
 
 
 class App extends Component {
@@ -32,8 +32,8 @@ class App extends Component {
                 </div>
                 <BrowserRouter>
                 <div className="DisplayWindows">
-                    <NavLink exact to="/TODO" className="Link" activeClassName="current"><h2 className="SubTitleHome">Todo List</h2></NavLink>
-                    <NavLink to="/NewTodo" className="Link" activeClassName="current"><h2 className="SubTitleHome">Create New Todo</h2></NavLink>
+                    <NavLink exact to="/TODO" className="Link" activeClassName="current"><h2 className="SubTitleHome">Open To do List</h2></NavLink>
+                    <NavLink to="/NewTodo" className="Link" activeClassName="current"><h2 className="SubTitleHome">Create New To do</h2></NavLink>
                 </div>
                 <Switch>       
                     <Route exact path="/TODO" component={TODO}></Route>

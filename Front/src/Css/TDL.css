@@ -1,6 +1,8 @@
-.SubTitleNewTask{
+.displaytodo1{
     color: rgb(85,26,139);
     font-family: "Lobster";
     font-size: 2em;
     text-align: center;
+    text-decoration: underline rgb(85,26,139) 4px;
+
 }

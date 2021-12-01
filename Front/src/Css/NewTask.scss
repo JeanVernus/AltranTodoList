@@ -1,0 +1,140 @@
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/relax.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.DisplayAddTask{
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em
+}
+
+.TitleNewTask{
+    color: rgb(56, 12, 97);
+    font-family: "Lobster";
+    font-size: 3em;
+    text-decoration: underline rgb(85,26,139);
+    text-align: center;
+}
+
+.SubTitleNewTask{
+    color: rgb(56, 12, 97);
+    font-family: "Lobster";
+    font-size: 2em;
+    text-align: center;
+}
+
+.DisplayAddButton{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.SaveButton{
+    background-color: rgb(85,26,139);
+    box-shadow: purple 5px, 15px, 15px, 5px;
+    color: white;
+    height: 30px;
+    width: 80px;
+    padding: 0.2em;
+    margin-top: -50px
+
+}
+
+.DisplayNewTask{
+    margin-left: auto ;
+    margin-right: auto ;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px rgb(131,80,139) double;
+    
+}
+
+.ContentNewTask{
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: rgb(131, 80, 179);
+    font-family: "Lobster";
+    font-size: 3em;
+    text-align: center;
+}
+.Checkbox{
+    transform: translateY(60px);
+    background-color: white;
+    border: 2px rgb(85,26,139) double;
+}
+
+input{
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 4px dotted rgb(85,26,139);
+    background-color: transparent;
+    height: 30px;
+    width: 200px;
+    color: white;
+    text-align: center;
+}
+
+.TextInput{
+    font-weight: bolder;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: rgb(85,26,139);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.TableTask{
+    border: 2px rgb(85,26,139) double;
+}
+
+.AddButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(125, 32, 148);
+    box-shadow: 0 0 0px 5px rgba(69, 8, 82, 0.658);
+    border-radius: 20px;
+    transition: width 0.5s ease-out;
+    height: 70px;
+    width: 15px;
+    padding: 1em;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    top:-50px;
+  
+    animation: 1s infinite alternate 5s Boutton;
+  }
+  
+  .spane{
+    position:relative;
+    display: block;
+    overflow: hidden;
+    top: -0px;
+    height: 50px;
+    padding-left: 5px;
+    font-family: 'Work Sans';
+    font-weight:300;
+    color: white;
+    letter-spacing: 0.5px;
+  }
+  
+  /*------------- ANIMATION  */
+  
+  @keyframes Boutton{
+      0% {transform:translateY(0px);}
+      100% {transform:translateY(5px);}
+  }
+  
+  .AddButton:HOVER{
+      transition: width 0.5s ease-out;
+      width:100px;
+      background: rgb(114, 15, 134); 
+      border-radius: 10px;
+      animation: none;
+  }
+  
+  .AddButton:HOVER .fa-angle-down{
+      color: black;
+      transition: rotate 0.1s ease;
+      transform: rotate(-90deg);
+  }

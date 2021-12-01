@@ -1,23 +1,25 @@
 import React, {Component} from "react";
-import '../Css/NewTask.css';
+import {Button, Form} from 'semantic-ui-react';
+import '../Css/NewTask.scss';
+import Noty from 'noty';
 import Axios from 'axios';
 
 class NewTask extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            id: 1,
+            id: "",
             title:"",
             content: "",
             res : "",
             tasksList: []
          }
         this.addTask = this.addTask.bind(this);
-        this.inputTask = this.inputTask.bind(this);
+        this.InputTask = this.InputTask.bind(this);
         this.saveTask = this.saveTask.bind(this);
     }
 
-    inputTask(event, key){
+    InputTask(event, key){
         this.setState({[event.target.name] : event.target.value});
         if(key === "task"){this.setState({content: event.target.value})};
         if(key === "title"){this.setState({title: event.target.value})};
@@ -37,6 +39,15 @@ class NewTask extends Component {
             this.setState({res : res.data});
             tasksList.push(res);
             this.setState({tasksList});
+            if(tasksList.length === 10) {
+                new Noty({
+                    text: 'task limit rteached !',
+                    type: 'warning',
+                    theme: 'sunset',
+                    timeout: 3000,
+                  }).show();
+                  this.saveTask()
+            } 
         })
         document.getElementById("task").value = "";
         document.getElementById("title").value = "";
@@ -57,8 +68,22 @@ class NewTask extends Component {
             console.log("saveTask",res.data);
             if (res.data.string === "ok"){
                 this.refreshPage()
-                // alert("Todo send!")
+                new Noty({
+                    text: 'Todo save!',
+                    type: 'sucess',
+                    theme: 'sunset',
+                    timeout: 3000,
+                  }).show();
                  }  
+            if(res.data.string === "task limit reached") {
+                new Noty({
+                    text: 'task limit reached',
+                    type: 'warning',
+                    theme: 'sunsen',
+                    timeout: 3000,
+                  }).show();
+            }  
+                 
         })
         
         
@@ -88,14 +113,14 @@ class NewTask extends Component {
         return (
             <div>
                 <h2 className="SubTitleNewTask">Add task</h2>
-                <form onSubmit={this.addTask}>
+                <Form onSubmit={this.addTask}>
                     <div className="DisplayAddTask">
-                        <input className="TextInput"type="text" name="title" id="title" placeholder="title" onChange={event => this.inputTask(event, "title")} />
-                        <input className="TextInput"type="text" name="task" id="task" placeholder="task" onChange={event => this.inputTask(event, "task")} />
+                        <input className="TextInput" type="text" name="title" id="title" placeholder="TITLE" onChange={event => this.InputTask(event, "title")} />
+                        <input className="TextInput"type="text" name="task" id="task" placeholder="TASK" onChange={event => this.InputTask(event, "task")} required/>
                     </div>
-                    <div className="DisplayAddButton"><button className="AddButton" type="submit">Add task</button></div>
-                    <div className="DisplayAddButton"><button className="SaveButton" onClick={this.saveTask}>Save todo</button></div>
-                </form>
+                    <div className="DisplayAddButton"><Button className="SaveButton" type="onSubmit">add task</Button></div>
+                    <div className="DisplayAddButton"><Button inverted color='violet' className="AddButton" onClick={this.saveTask}><h4 className="spane"><i className="fas fa-angle-down"></i>Save task</h4></Button></div>
+                </Form>
     
                 <h2 className="TitleNewTask">Tasks list</h2>
                 <div>{this.componentDidUpdate()}</div>
