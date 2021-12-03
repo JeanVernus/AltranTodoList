@@ -1,15 +1,13 @@
-# Présentation de la fonctionnalité
-
 ## Application To Do List.
 
-Cette version en cours de développement d'une to do list permet de rédiger 12 to do list comprenant chacune 10 tâches.
-Vous vous donc les créer, modifier et sauvegarder en base de données.
-Barrer les tâche executer.
-( en cours de développement)
-Fonctionnalité à venir: Sauvegarde des tâches barrées et Suppr des listes voulues.
+This version under development of a to do list makes it possible to write 12 to do lists each comprising 10 tasks.
+You therefore create, modify and save them in the database.
+Cross out the task to be executed.
+( in development)
+Function to come: Save crossed-out tasks and Delete wanted lists.
 
 
-### Technos utilisées
+### Technos used
 
 1. React
 1. JavaScript
@@ -17,9 +15,9 @@ Fonctionnalité à venir: Sauvegarde des tâches barrées et Suppr des listes vo
 1. Npm
 1. Scss
 1. Node.js
-1. MySql/PhpMyAdmin
+1. MySql / PhpMyAdmin
 
-### Module NPM
+### NPM module
 
 * Semantic-ui-rect
 * react-reveal
@@ -31,22 +29,25 @@ Fonctionnalité à venir: Sauvegarde des tâches barrées et Suppr des listes vo
 
 # Installation
 
-1. clône le respository gitHub : https://github.com/JeanVernus/AltranTodoList
+1.clone the gitHub respository: https://github.com/JeanVernus/AltranTodoList
 
-1. #### Installer npm et ces dépendences dans le /Front et /Back
+1. #### Install npm and its dependencies in the / Front and / Back
       . npm install
-1. #### installer nodemon en global
+1. #### install nodemon globally
       . npm i nodemon -g
-1. #### installer et configurer sql my server
-      . suivez les instructions pour configurer vos identifiant et mdp "root"
+1. #### install and configure sql my server
+      . follow the instructions to configure your "root" username and password
       . apt update
       . apt install mysql-server
-1. #### installer et configurer phpmyadmin
+1. #### install and configure phpmyadmin
       . apt install -g phpmyadmin
-      . suivez les instructions pour configurer simplement phpmyadmin en localhost
-      . importer dans votre nouvel bases de donner le fichier Users.sql que vous trouverez dans le dossier Assets de ce package
-      . enfin modifier le fichier configMySql.js dans le back de se package par les informations rentrées pendant la configuration de votre base de données phpmyadmin
-1. #### Lancer le server
+      . follow the instructions to simply configure phpmyadmin in localhost
+      . import into your new databases giving the Users.sql file that you will find in the Assets folder of this package
+      . finally modify the configMySql.js file in the back of the package by the information entered during the configuration of your phpmyadmin database
+1. #### Start the server
       . nodemon index.js
-1. #### Lancer le programme
-      .npm start
+1. #### Start the program
+      .npm start 
+En savoir plus sur ce texte sourceVous devez indiquer le texte source pour obtenir des informations supplémentaires
+Envoyer des commentaires
+Panneaux latéraux
