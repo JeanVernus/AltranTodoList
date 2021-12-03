@@ -5,6 +5,8 @@ import {
     NavLink,
     Route
 } from 'react-router-dom';
+import Logo from "../Assets/TitlePenLeft.png";
+import {Card, Image} from 'semantic-ui-react';
 import Axios from 'axios';
 import Noty from 'noty';
 import TDL1 from './TodoList/TDL1';
@@ -60,6 +62,7 @@ Axios.post('http://www.localhost:7770/displayTodos',{
 })
 }
 
+
 renderDisplayTodos(){
     const { todos } = this.state;
     console.log('todos',this.state.todos);
@@ -67,88 +70,260 @@ renderDisplayTodos(){
         
         <div className="displayTodoList">
                 <div>{todos.map((json) =>(
-                    <div >
+                    <div className="DisplayCards">
                         <BrowserRouter>
-                        <div id={json.idOne}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idOne}</h1></div> 
-                            <NavLink target="_self"  to="/TDL1" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleOne}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1One}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2One}</h2>    
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL1" className="Link" activeClassName="current"><Card  className="Card" id={json.idOne}>
+                                <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idOne}</h1>
+                                            </div>
+                                           <h1 className="TitleNewTodo">{json.titleOne}</h1>
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1One}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2One}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink >
+                                <NavLink to="/TDL2" className="Link" activeClassName="current"><Card  className="Card" id={json.idTwo}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idTwo}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleTwo}</h1>
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Two}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Two}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.idTwo}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idTwo}</h1></div> 
-                                <NavLink target="_blank" to="/TDL2" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleTwo}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Two}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Two}</h2>
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL3" className="Link" activeClassName="current"><Card  className="Card" id={json.idThree}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idThree}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleThree}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Three}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Three}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
+                                <NavLink to="/TDL4" className="Link" activeClassName="current"><Card  className="Card" id={json.idFour}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idFour}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleFour}</h1>
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Four}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Four}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.idThree}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idThree}</h1></div> 
-                                <NavLink target="_blank" to="/TDL3" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleThree}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Three}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Three}</h2>
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL5" className="Link" activeClassName="current"><Card  className="Card" id={json.idFive}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idFive}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleFive}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Five}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Five}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
+                                <NavLink to="/TDL6" className="Link" activeClassName="current"><Card  className="Card" id={json.idSix}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idSix}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleSix}</h1>
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Six}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Six}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.idFour}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idFour}</h1></div> 
-                                <NavLink target="_blank" to="/TDL4" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleFour}</h1> </NavLink> 
-                                <h2 className="SubTitleNewTodo">{json.element1Four}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Four}</h2>    
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL7" className="Link" activeClassName="current"><Card  className="Card" id={json.idSeven}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idSeven}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleSeven}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Seven}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Seven}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
+                                <NavLink to="/TDL8" className="Link" activeClassName="current"><Card  className="Card" id={json.idEight}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idEight}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleEight}</h1>
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Eight}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Eight}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.ieFive}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idFive}</h1></div> 
-                                <NavLink target="_blank" to="/TDL5" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleFive}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Five}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Five}</h2>
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL9" className="Link" activeClassName="current"><Card  className="Card" id={json.idNine}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idNine}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleNine}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Nine}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Nine}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
+                                <NavLink to="/TDL10" className="Link" activeClassName="current"><Card  className="Card" id={json.idTen}>
+                                <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idTen}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleTen}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Ten}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Ten}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.idSix}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idSix}</h1></div> 
-                                <NavLink target="_blank" to="/TDL6" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleSix}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Six}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Six}</h2>
+                            <div className="DisplayCards" >
+                            <NavLink to="/TDL9" className="Link" activeClassName="current"><Card  className="Card" id={json.idEleven}>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idEleven}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleEleven}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Eleven}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Eleven}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
+                                <NavLink to="/TDL10" className="Link" activeClassName="current"><Card  className="Card" id={json.idTwelve}>
+                                <Card.Content>
+                                        <Card.Header>
+                                            <Image
+                                                className="Logo"
+                                                floated='right'
+                                                size='mini'
+                                                src={Logo}
+                                            />
+                                            <div>
+                                                <h1 className="TitleNewTodo">{json.idTwelve}</h1>
+                                            </div>
+                                            <h1 className="TitleNewTodo">{json.titleTwelve}</h1> 
+                                        </Card.Header>
+                                        <Card.Description>
+                                            <h2 className="SubTitleNewTodo">{json.element1Twelve}</h2>
+                                            <h2 className="SubTitleNewTodo">{json.element2Twelve}</h2>
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card></NavLink>
                             </div>
-                        </div>
-                        <div id={json.idSeven}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idSeven}</h1></div> 
-                                <NavLink target="_blank" to="/TDL7" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleSeven}</h1> </NavLink> 
-                                <h2 className="SubTitleNewTodo">{json.element1Seven}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Seven}</h2>    
-                            </div>
-                        </div>
-                        <div id={json.idEight}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idEight}</h1></div> 
-                                <NavLink target="_blank" to="/TDL8" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleEight}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Eight}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Eight}</h2>
-                            </div>
-                        </div>
-                        <div id={json.idNine}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idNine}</h1></div> 
-                                <NavLink target="_blank" to="/TDL9" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleNine}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Nine}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Nine}</h2>
-                            </div>
-                        </div>
-                        <div id={json.idTen}>
-                            <div className="DisplayNewTodo">
-                                <div><h1 className="TitleNewTodo">{json.idTen}</h1></div> 
-                                <NavLink target="_blank" to="/TDL10" className="Link" activeClassName="current"><h1 className="TitleNewTodo">{json.titleTen}</h1> </NavLink>
-                                <h2 className="SubTitleNewTodo">{json.element1Ten}</h2>
-                                <h2 className="SubTitleNewTodo">{json.element2Ten}</h2>
-                            </div>
-                        </div> 
                         <Switch>
                             <Route exact path="/TDL1" component={TDL1}></Route>
                             <Route path="/TDL2" component={TDL2}></Route>
@@ -177,7 +352,7 @@ renderDisplayTodos(){
     render() {   
         return ( 
                 <div>
-                    <div className="DisplaySubTitle"><h2 className="SubTitleNewTodo">Choose a todo</h2></div>
+                    <div className="DisplaySubTitle"><h2 className="SubTitleNewTodo1">Choose a todo</h2></div>
                     <div>
                         <div>
                             {this.renderDisplayTodos()}

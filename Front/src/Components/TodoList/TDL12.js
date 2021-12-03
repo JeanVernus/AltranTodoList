@@ -5,7 +5,7 @@ import '../../Css/TDL.scss';
 import Noty from 'noty';
 
 
-    class TDL3 extends Component {
+    class TDL12 extends Component {
         constructor(props) {
             super(props);
             this.state = { 
@@ -70,7 +70,7 @@ import Noty from 'noty';
     componentDidMount(){
         const {todolist} = this.state;
         console.log("todolist before", todolist);
-        Axios.post('http://www.localhost:7770/displayTodo3', {
+        Axios.post('http://www.localhost:7770/displayTodo12', {
         }).then(res =>{
             console.log('res.dataTDL', res.data);
             this.setState({res : res.data})
@@ -167,4 +167,4 @@ import Noty from 'noty';
     }
 }
  
-export default TDL3;
+export default TDL12;

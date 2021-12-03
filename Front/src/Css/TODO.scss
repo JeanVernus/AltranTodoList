@@ -1,48 +1,31 @@
 @import "~noty/src/noty.scss";
 @import "~noty/src/themes/sunset.scss";
 
+
 .displayTodoList{
     border-left: 4px rgb(85,26,139) solid;
     border-right: 4px rgb(85,26,139) solid;
 
 }
 
-.DisplayNewTodo{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    opacity: 0.5
-}
-
-.DisplayNewTodo:HOVER{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    opacity: 1
-}
-
 .TitleNewTodo{
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: grey;
     color: rgb(56, 12, 97);
     font-family: "Lobster";
-    font-size: 3em;
-    text-align: center;
+    font-size: 1.5em;
     text-decoration: underline rgb(85,26,139) 4px;
-    padding-right: 4em;
     font-family: "Lobster";
-
 }
 
-.SubTitleNewTodo{
+.SubTitleNewTodo1{
     -webkit-text-stroke: 0.5px;
     -webkit-text-stroke-color: grey;
-    color: rgb(85,26,139);
+    color: rgb(58, 9, 104);
     font-family: "Lobster";
-    font-size: 2em;
-    padding:1em;
+    font-size: 2.5em;
     text-align: center;
+    text-decoration: underline 3px grey ;
 }
+
 .DisplaySubTitle{
     margin-top: 50px;
     margin-bottom: 100px;
@@ -50,5 +33,46 @@
     margin-right: auto;
     height: 80px;
     width : 25%;
-    border-bottom: 4px grey solid;
 }
+.Logo{
+    width: 40px;
+    height: 40px;
+}
+
+.Card{
+    border: solid 4px grey;
+    display:flex;
+    justify-content: space-around;
+    background-color: rgb(157, 95, 214);
+    padding: 2em;
+    width: 250px;
+
+}
+.Card:HOVER{
+    border: solid 4px grey;
+    display:flex;
+    justify-content: center;
+    background-color: rgb(157, 95, 214);
+    padding: 2em;
+    width: 250px;
+    opacity: 0.5
+
+
+}
+
+.DisplayCards{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.DisplayAllCards{
+    padding: 4em;
+} 
+
+.displayTaskCard{
+    display: flex;
+    justify-content: flex-start
+}
+

@@ -1,5 +1,6 @@
 @import "~noty/src/noty.scss";
 @import "~noty/src/themes/sunset.scss";
+@import "~noty/src/themes/sunset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Fredericka+the+Great&family=Grey+Qo&family=Lobster&family=Monsieur+La+Doulaise&display=swap');
 
 html{
@@ -26,7 +27,7 @@ html{
 
 .BoxTitle{
   background-image: url("../Assets/background.1.png");
-  background-size:15vmax;
+  // background-size:15vmax;
   padding: 5em;
   border: 10px rgb(56, 12, 97) solid;
   border-radius: 50%;

@@ -1,0 +1,213 @@
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/sunset.scss";
+
+.displaytodoTitle{
+    color: rgb(56, 12, 97);
+    font-family: "Lobster";
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.displayTitle{
+    margin-left:50%;
+}
+
+.displaytodo {
+    color: rgb(56, 12, 97);
+    font-family: "Lobster";
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.displayTableToDo{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+
+}
+
+.displayUpdateButton{
+    margin-bottom: 1em;
+}
+
+.ButtonSubmit{
+    background-color: rgb(168, 76, 233);
+    width: 120px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 1em;
+}
+
+.Sauvegarder{
+    color: rgb(168, 76, 233);
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: grey;
+    transform: translateY(-25px)
+}
+
+.Table{
+    border: 4px solid grey;
+    padding: 5em
+}
+ .SizeImgButton{
+     width: 15px;
+     height: 15px;
+}
+
+.display2Button{
+    display: flex;
+    justify-content: center;
+   
+}
+
+.Buttontrans{
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateY(22px)
+}
+
+.or{
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: grey;
+}
+
+input[type = checkbox] {
+    width:50px;
+    height: 30px;
+}
+
+.displaytodo1{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+
+}
+
+.displaytodo2{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo3{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo4{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo5{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo6{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo7{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo8{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo9{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+.displaytodo10{
+-webkit-text-stroke: 0.5px;
+-webkit-text-stroke-color: grey;
+font-size: 2em;
+color: rgb(56, 12, 97);
+font-family: "Lobster";
+    
+}
+
+input.DisplayCheckbox1:checked + label.displaytodo1{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox2:checked + label.displaytodo2{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox3:checked + label.displaytodo3{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox4:checked + label.displaytodo4{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox5:checked + label.displaytodo5{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox6:checked + label.displaytodo6{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox7:checked + label.displaytodo8{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox8:checked + label.displaytodo8{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox9:checked + label.displaytodo9{
+    text-decoration: line-through 2px black;
+    color:black
+}
+input.DisplayCheckbox10:checked + label.displaytodo10{
+    text-decoration: line-through 2px black;
+    color:black
+}

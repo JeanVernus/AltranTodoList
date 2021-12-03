@@ -23,7 +23,6 @@ class NewTask extends Component {
         this.setState({[event.target.name] : event.target.value});
         if(key === "task"){this.setState({content: event.target.value})};
         if(key === "title"){this.setState({title: event.target.value})};
-        // console.log("content", this.state.content);
     }
 
     addTask(event){
@@ -35,7 +34,6 @@ class NewTask extends Component {
         })
         .then(res =>{
             const {tasksList} = this.state;
-            // console.log(res.data);
             this.setState({res : res.data});
             tasksList.push(res);
             this.setState({tasksList});
@@ -53,7 +51,10 @@ class NewTask extends Component {
         document.getElementById("title").value = "";
     }
 
-    refreshPage(){ 
+    miseEnAttente(){
+        setTimeout(this.refreshPage, 1500);
+    }
+    refreshPage(){
         window.location.reload()
     }
 
@@ -67,10 +68,10 @@ class NewTask extends Component {
         .then(res =>{
             console.log("saveTask",res.data);
             if (res.data.string === "ok"){
-                this.refreshPage()
+                this.miseEnAttente()
                 new Noty({
                     text: 'Todo save!',
-                    type: 'sucess',
+                    type: 'success',
                     theme: 'sunset',
                     timeout: 3000,
                   }).show();
