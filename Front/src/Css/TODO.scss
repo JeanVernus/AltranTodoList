@@ -56,8 +56,15 @@
     padding: 2em;
     width: 250px;
     opacity: 0.5
+}
 
-
+.deleteButton{
+    color: rgb(168, 76, 233);
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: grey;
+    background-color:rgb(85,26,139);
+    width: 320px;
+    height: 25px
 }
 
 .DisplayCards{
@@ -76,3 +83,7 @@
     justify-content: flex-start
 }
 
+.displayButtonDelete{
+    display: flex;
+    justify-content: flex-start
+}

@@ -86,13 +86,29 @@ class NewTask extends Component {
             }  
                  
         })
-        
-        
     }
     
+    componentDidMount(){Axios.post('http://www.localhost:7770/displayTodos').then(res => {
+        if(res.data.string === "Todo list limit reached!"){
+            new Noty({
+                text: "Todo list limit reached!",
+                type: 'warning',
+                theme: 'sunset',
+                timeout: 3000,
+              }).show();
+        }
+        if(res.data.string === "Todo list limit is over!"){
+            new Noty({
+                text: "Todo list limit reached! <br/ > Your last todo is not saved",
+                type: 'warning',
+                theme: 'sunset',
+                timeout: 3000,
+              }).show();
+        }
+    })}
+
     componentDidUpdate(){
         const { tasksList, title} = this.state;
-        console.log('array', tasksList);
         return(
             <div className="TableTask">
                 <h1 className="TitleNewTask">{title}</h1>

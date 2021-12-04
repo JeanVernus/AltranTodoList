@@ -1,10 +1,10 @@
 ## Application To Do List.
 
 This version under development of a to do list makes it possible to write 12 to do lists each comprising 10 tasks.
-You therefore create, modify and save them in the database.
+You therefore create, modify, save and delete them in the database.
 Cross out the task to be executed.
 ( in development)
-Function to come: Save crossed-out tasks and Delete wanted lists.
+Function to come: Save crossed-out tasks
 
 
 ### Technos used
@@ -16,16 +16,19 @@ Function to come: Save crossed-out tasks and Delete wanted lists.
 1. Scss
 1. Node.js
 1. MySql / PhpMyAdmin
+1. Redux
 
 ### NPM module
 
 * Semantic-ui-rect
-* react-reveal
+* React-reveal
 * Express
 * Axios
 * React-router-dom
 * Noty
-* node-sass
+* Node-sass
+* React-redux
+* Redux
 
 # Installation
 

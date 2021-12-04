@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import {Form, Button, Input, Table} from 'semantic-ui-react';
+import { connect } from 'react-redux';
 import '../../Css/TDL.scss';
 import Noty from 'noty';
 
@@ -55,7 +56,15 @@ import Noty from 'noty';
            todolist, title, element1, element2,element3, element4, element5, element6, element7, element8, element9, element10
         })
         .then(res => {
-            console.log('res.data', res.data.title);
+            console.log('res.dataUPDATE', res.data);
+            if(res.data.string === "noUpdate"){
+                new Noty({
+                    text: `Create before a Todo`,
+                    type: 'warning',
+                    theme: 'sunset',
+                    timeout: 3000,  
+                  }).show();
+            }
             if(res.data.string === "updateOk"){
                 new Noty({
                     text: `Todo is update !`,
@@ -64,30 +73,49 @@ import Noty from 'noty';
                     timeout: 3000,  
                   }).show();
             }
+           
        })
     }
 
     componentDidMount(){
         const {todolist} = this.state;
+        const idTodo5 = this.props; 
         console.log("todolist before", todolist);
         Axios.post('http://www.localhost:7770/displayTodo5', {
+            idTodo5
         }).then(res =>{
             console.log('res.dataTDL', res.data);
             this.setState({res : res.data})
             todolist.push(res.data);
             this.setState({todolist});
+
+            if(res.data.string === "no Todo"){
+                this.AlertEmpty()
+            }
+            else{
+                this.Alert()
+            }
         })
-        this.Alert()
+       
     }
 
-    Alert(){
+    AlertEmpty(){
         new Noty({
-            text: "Todo list OPEN <br /> DOWN THE WINDOW",
-            type: 'success',
+            text: "no Todo to display",
+            type: 'warning',
             theme: 'sunset',
             timeout: 3000,
           }).show();
-}
+    }
+
+    Alert(){
+            new Noty({
+                text: "Todo list OPEN <br /> DOWN THE WINDOW",
+                type: 'success',
+                theme: 'sunset',
+                timeout: 3000,
+              }).show();
+    }
 
     checkedLine(){
         if(document.getElementById("case1").checked === true){this.setState({checked : true})}
@@ -151,7 +179,7 @@ import Noty from 'noty';
                         </div>
                     ))
                 }  
-                <div className="displayUpdateButton"><Button className="ButtonSubmit" type="submit"><h4 className="Sauvegarder">Sauvegarder</h4></Button></div>
+                <div className="displayUpdateButton"><Button className="ButtonSubmit" type="submit"><h4 className="Sauvegarder">SAVE</h4></Button></div>
                 </Form>
 
             </div>
@@ -166,5 +194,20 @@ import Noty from 'noty';
          );
     }
 }
+
+const mapStateToProps = (store) => ({
+    idTodo1: store.auth.idTodo1,
+    idTodo2: store.auth.idTodo2,
+    idTodo3: store.auth.idTodo3,
+    idTodo4: store.auth.idTodo4,
+    idTodo5: store.auth.idTodo5,
+    idTodo6: store.auth.idTodo6,
+    idTodo7: store.auth.idTodo7,
+    idTodo8: store.auth.idTodo8,
+    idTodo9: store.auth.idTodo9,
+    idTodo10: store.auth.idTodo10,
+    idTodo11: store.auth.idTodo11, 
+    idTodo12 : store.auth.idTodo12,
+  })
  
-export default TDL5;
+export default connect(mapStateToProps) (TDL5);
