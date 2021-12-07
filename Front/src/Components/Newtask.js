@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {Button, Form} from 'semantic-ui-react';
+import {Button, Form, Image, Icon} from 'semantic-ui-react';
 import '../Css/NewTask.scss';
 import Noty from 'noty';
+import Moins from '../Assets/moins.png';
 import Axios from 'axios';
 
 class NewTask extends Component {
@@ -17,6 +18,7 @@ class NewTask extends Component {
         this.addTask = this.addTask.bind(this);
         this.InputTask = this.InputTask.bind(this);
         this.saveTask = this.saveTask.bind(this);
+        this.deleteLine = this.deleteLine.bind(this);
     }
 
     InputTask(event, key){
@@ -107,6 +109,15 @@ class NewTask extends Component {
         }
     })}
 
+    deleteLine(index, tasksList){
+        const CopyTasksList = [...tasksList];
+        console.log('beforeCopyTasksList', CopyTasksList, index);
+            CopyTasksList.splice(index, 1);
+        this.setState({tasksList : CopyTasksList})
+        console.log('AfterCopyTasksList', CopyTasksList, index);
+
+    }
+
     componentDidUpdate(){
         const { tasksList, title} = this.state;
         return(
@@ -114,16 +125,21 @@ class NewTask extends Component {
                 <h1 className="TitleNewTask">{title}</h1>
                 <div>{tasksList.map((json, index) =>(
                     <div className="DisplayNewTask" key={index}>
-                        <h1 className="ContentNewTask">{json.data}</h1>
-                        <input className="Checkbox" type="checkbox"/>
-                    </div>
-                                              )                         
-                                    )
+                        <div><h1 className="ContentNewTask">{json.data} </h1></div>                        
+                        <div>
+                        <Button 
+                        className="deleteButton" 
+                        onClick={()=>this.deleteLine(index, tasksList)}
+                        >
+                        Del</Button></div>
+                    </div>                               
+                    ))
                     }      
                 </div>
             </div>
         )
     }
+
 
 
     render() { 

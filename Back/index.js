@@ -266,10 +266,9 @@ App.post('/displayTodos', (req, res) => {
     const addTodoList = 'SELECT * FROM todolist1'
     config.query(addTodoList, (err, resultdisplayTodos) => {
         console.log('resultdisplayTodos', resultdisplayTodos);
-        console.log('length', resultdisplayTodos.length);
     if(resultdisplayTodos.length < 1){
       
-            res.status(200).json({string :"you haven't save a to do"})      
+            res.status(200).json({string :"you haven't save a to do"});      
     }
 
     if(resultdisplayTodos.length === 1 ){

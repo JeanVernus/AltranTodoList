@@ -37,6 +37,13 @@ class TODO extends Component {
 
     }
 
+miseEnAttente(){
+    setTimeout(this.refreshPage, 1500);
+}
+refreshPage(){
+    window.location.reload()
+}
+
 
 componentDidMount(){
 const { dispatch } = this.props;
@@ -89,6 +96,7 @@ deleteTodo(){
     })
     .then((res) => {
         console.log(res.data);
+        this.miseEnAttente()
         if(res.data.string === "delete Success!" )
         new Noty({
             text: "Delete success!",
@@ -100,9 +108,6 @@ deleteTodo(){
     }   
 )}
 
-deleteConfirm(){
-    alert("xxxxxx");
-}
 
 
 renderDisplayTodos(){
@@ -137,7 +142,7 @@ renderDisplayTodos(){
                                         </Card.Content>
                                     </Card>
                                     </NavLink >
-                                    <Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                    <Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL2" className="Link" activeClassName="current"><Card  className="Card" id={json.idTwo}>
@@ -159,7 +164,7 @@ renderDisplayTodos(){
                                         </Card.Description>
                                     </Card.Content>
                                 </Card></NavLink>
-                                <Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                <Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                             <div className="DisplayCards" >
@@ -182,7 +187,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Three}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL4" className="Link" activeClassName="current"><Card  className="Card" id={json.idFour}>
@@ -203,7 +208,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Four}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                             <div className="DisplayCards" >
@@ -226,7 +231,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Five}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL6" className="Link" activeClassName="current"><Card  className="Card" id={json.idSix}>
@@ -247,7 +252,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Six}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                             <div className="DisplayCards" >
@@ -270,7 +275,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Seven}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL8" className="Link" activeClassName="current"><Card  className="Card" id={json.idEight}>
@@ -291,7 +296,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Eight}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                             <div className="DisplayCards" >
@@ -314,7 +319,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Nine}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL10" className="Link" activeClassName="current"><Card  className="Card" id={json.idTen}>
@@ -335,7 +340,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Ten}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                             <div className="DisplayCards" >
@@ -358,7 +363,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Eleven}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                                 <div>
                                 <NavLink to="/TDL12" className="Link" activeClassName="current"><Card  className="Card" id={json.idTwelve}>
@@ -379,7 +384,7 @@ renderDisplayTodos(){
                                             <h2 className="SubTitleNewTodo">{json.element2Twelve}</h2>
                                         </Card.Description>
                                     </Card.Content>
-                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButton" OnClick={this.deleteConfirm}>DELETE</Button></Form>
+                                </Card></NavLink><Form onSubmit={this.deleteTodo}><Button type="submit" value="Delete" className="deleteButtonTL">DELETE</Button></Form>
                                 </div>
                             </div>
                         <Switch>
