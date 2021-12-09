@@ -4,7 +4,9 @@ This version under development of a to do list makes it possible to write 12 to 
 You therefore create, modify, save and delete them in the database.
 Cross out the task to be executed.
 ( in development)
-Function to come: Save crossed-out tasks
+Function to come: 
+* Save crossed-out tasks
+* Fix problem of delete todo button
 
 
 ### Technos used

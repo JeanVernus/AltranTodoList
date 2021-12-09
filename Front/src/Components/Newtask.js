@@ -1,8 +1,7 @@
 import React, {Component} from "react";
-import {Button, Form, Image, Icon} from 'semantic-ui-react';
+import {Button, Form} from 'semantic-ui-react';
 import '../Css/NewTask.scss';
 import Noty from 'noty';
-import Moins from '../Assets/moins.png';
 import Axios from 'axios';
 
 class NewTask extends Component {

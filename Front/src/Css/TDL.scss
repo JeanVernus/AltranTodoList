@@ -170,46 +170,115 @@ font-family: "Lobster";
 font-size: 2em;
 color: rgb(56, 12, 97);
 font-family: "Lobster";
-    
+}
+
+.taskCompleted{
+    text-decoration: line-through 4px black;
+    font-style: italic;
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: grey;
+    color: rgb(56, 12, 97);
+    font-size: 2em;
+    font-family: "Lobster";
+    opacity: 0.8
 }
 
 input.DisplayCheckbox1:checked + label.displaytodo1{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox1:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox2:checked + label.displaytodo2{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox2:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox3:checked + label.displaytodo3{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox3:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox4:checked + label.displaytodo4{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox4:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox5:checked + label.displaytodo5{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox5:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox6:checked + label.displaytodo6{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox6:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox7:checked + label.displaytodo8{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox7:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox8:checked + label.displaytodo8{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox8:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox9:checked + label.displaytodo9{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
 }
+
+input.DisplayCheckbox9:checked{
+    visibility: hidden;
+}
+
 input.DisplayCheckbox10:checked + label.displaytodo10{
     text-decoration: line-through 2px black;
-    color:black
+    color:black;
+    visibility: hidden;
+}
+
+input.DisplayCheckbox10:checked{
+    visibility: hidden;
 }

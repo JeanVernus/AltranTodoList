@@ -23,22 +23,23 @@ import Noty from 'noty';
                 element9: "",
                 element10: "",
                 res:[],
-                todolist:[]
+                todolist:[],
+                completed:[]
             }
         this.renderDisplayTodo1 = this.renderDisplayTodo1.bind(this);
+        this.renderCompletedArray = this.renderCompletedArray.bind(this);;
         this.handleChange = this.handleChange.bind(this);
         this.updateTodo = this.updateTodo.bind(this);
-        // this.checkedLine = this.checkedLine.bind(this);
 
-        }
+    }
 
-        miseEnAttente(){
-            setTimeout(this.refreshPage, 1500);
-        }
-    
-        refreshPage(){
-            window.location.reload()
-        }
+    miseEnAttente(){
+        setTimeout(this.refreshPage, 1500);
+    }
+
+    refreshPage(){
+        window.location.reload()
+    }
 
     handleChange(event, key){
         const {todolist} = this.state;
@@ -126,18 +127,112 @@ import Noty from 'noty';
               }).show();
     }
 
-    // checkedLine(){
-    //     if(document.getElementById("case1").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case2").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case3").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case4").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case5").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case6").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case7").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case8").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case9").checked === true){this.setState({checked : true})}
-    //     if(document.getElementById("case10").checked === true){this.setState({checked : true})}  
-    // }
+    addE1InArray(){
+        const {completed} = this.state;
+        const element1 = this.state.todolist[0].element1;
+        if(document.getElementById('case1').checked === true){
+            completed.push(element1)
+        }
+        this.setState({completed})
+    }
+
+    addE2InArray(){
+        const {completed} = this.state;
+        const element2 = this.state.todolist[0].element2;
+        if(document.getElementById('case2').checked === true){
+            completed.push(element2)
+        }
+        this.setState({completed})
+    }
+
+    addE3InArray(){
+        const {completed} = this.state;
+        const element3 = this.state.todolist[0].element3;
+        if(document.getElementById('case3').checked === true){
+            completed.push(element3)
+        }
+        this.setState({completed})
+    }
+
+    addE4InArray(){
+        const {completed} = this.state;
+        const element4 = this.state.todolist[0].element4;
+        if(document.getElementById('case4').checked === true){
+            completed.push(element4)
+        }
+        this.setState({completed})
+    }
+
+    addE5InArray(){
+        const {completed} = this.state;
+        const element5 = this.state.todolist[0].element5;
+        if(document.getElementById('case5').checked === true){
+            completed.push(element5)
+        }
+        this.setState({completed})
+    }
+
+    addE6InArray(){
+        const {completed} = this.state;
+        const element6 = this.state.todolist[0].element6;
+        if(document.getElementById('case6').checked === true){
+            completed.push(element6)
+        }
+        this.setState({completed})
+    }
+
+    addE7InArray(){
+        const {completed} = this.state;
+        const element7 = this.state.todolist[0].element7;
+        if(document.getElementById('case7').checked === true){
+            completed.push(element7)
+        }
+        this.setState({completed})
+    }
+
+    addE8InArray(){
+        const {completed} = this.state;
+        const element8 = this.state.todolist[0].element8;
+        if(document.getElementById('case8').checked === true){
+            completed.push(element8)
+        }
+        this.setState({completed})
+    }
+    addE9InArray(){
+        const {completed} = this.state;
+        const element9 = this.state.todolist[0].element9;
+        if(document.getElementById('case9').checked === true){
+            completed.push(element9)
+        }
+        this.setState({completed})
+    }
+
+    addE10InArray(){
+        const {completed} = this.state;
+        const element10 = this.state.todolist[0].element10;
+        if(document.getElementById('case10').checked === true){
+            completed.push(element10)
+        }
+        this.setState({completed})
+    }
+
+
+
+    renderCompletedArray(){
+        console.log('completed.map', this.state.completed)
+        const { completed } = this.state;
+        return(
+            <div>
+                <div><h1>Completed</h1></div>
+                {completed.map((json, index) => (
+                    <div key={index}>
+                       <h2 className="taskCompleted" >{json}</h2>
+
+                    </div>
+                ))} 
+            </div>
+        )
+    }
 
 
     renderDisplayTodo1(){
@@ -154,35 +249,36 @@ import Noty from 'noty';
                                     <div className="displayTitle"><Table.Cell><Input type='text' placeholder={json.title} name="title" className="displaytodoTitle" onChange={event => this.handleChange(event, "title")} /></Table.Cell></div>
                                     </Table.Row>
                                     <Table.Row >
-                                    <Table.Cell ><div><input type='checkbox' id="case1" className="DisplayCheckbox1"/><label for="case1" className="displaytodo1" >{json.element1} </label></div></Table.Cell><Table.Cell><Input for="case1" type='text' placeholder="Change task here" name="element1" className="displaytodo" id="case1" onChange={event => this.handleChange(event, "element1")} /></Table.Cell>
+                                    <Table.Cell ><div><input type='checkbox' id="case1" className="DisplayCheckbox1" onClick={() => this.addE1InArray()} /><label for="case1" className="displaytodo1"  >{json.element1} </label></div></Table.Cell><Table.Cell><Input for="case1" type='text' placeholder="Change task here" name="element1" className="displaytodo" id="Case1" onChange={event => this.handleChange(event, "element1")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case2" className="DisplayCheckbox2"/><label for="case2" className="displaytodo2" >{json.element2} </label></div></Table.Cell><Table.Cell><Input for="case2" type='text' placeholder="Change task here" name="element2" className="displaytodo" id="case2" onChange={event => this.handleChange(event, "element2")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case2" className="DisplayCheckbox2" onClick={() => this.addE2InArray()} /><label for="case2" className="displaytodo2" >{json.element2} </label></div></Table.Cell><Table.Cell><Input for="case2" type='text' placeholder="Change task here" name="element2" className="displaytodo" id="case2" onChange={event => this.handleChange(event, "element2")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case3" className="DisplayCheckbox3"/><label for="case3" className="displaytodo3" >{json.element3} </label></div></Table.Cell><Table.Cell><Input for="case3" type='text' placeholder="Change task here" name="element3" className="displaytodo" id="case3" onChange={event => this.handleChange(event, "element3")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case3" className="DisplayCheckbox3" onClick={() => this.addE3InArray()} /><label for="case3" className="displaytodo3" >{json.element3} </label></div></Table.Cell><Table.Cell><Input for="case3" type='text' placeholder="Change task here" name="element3" className="displaytodo" id="case3" onChange={event => this.handleChange(event, "element3")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case4" className="DisplayCheckbox4"/><label for="case4" className="displaytodo4" >{json.element4} </label></div></Table.Cell><Table.Cell><Input for="case4" type='text' placeholder="Change task here" name="element4" className="displaytodo" id="case4" onChange={event => this.handleChange(event, "element4")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case4" className="DisplayCheckbox4" onClick={() => this.addE4InArray()} /><label for="case4" className="displaytodo4" >{json.element4} </label></div></Table.Cell><Table.Cell><Input for="case4" type='text' placeholder="Change task here" name="element4" className="displaytodo" id="case4" onChange={event => this.handleChange(event, "element4")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case5" className="DisplayCheckbox5"/><label for="case5" className="displaytodo5" >{json.element5} </label></div></Table.Cell><Table.Cell><Input for="case5" type='text' placeholder="Change task here" name="element5" className="displaytodo" id="case5" onChange={event => this.handleChange(event, "element5")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case5" className="DisplayCheckbox5" onClick={() => this.addE5InArray()} /><label for="case5" className="displaytodo5" >{json.element5} </label></div></Table.Cell><Table.Cell><Input for="case5" type='text' placeholder="Change task here" name="element5" className="displaytodo" id="case5" onChange={event => this.handleChange(event, "element5")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case6" className="DisplayCheckbox6"/><label for="case6" className="displaytodo6" >{json.element6} </label></div></Table.Cell><Table.Cell><Input for="case6" type='text' placeholder="Change task here" name="element6" className="displaytodo" id="case6" onChange={event => this.handleChange(event, "element6")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case6" className="DisplayCheckbox6" onClick={() => this.addE6InArray()} /><label for="case6" className="displaytodo6" >{json.element6} </label></div></Table.Cell><Table.Cell><Input for="case6" type='text' placeholder="Change task here" name="element6" className="displaytodo" id="case6" onChange={event => this.handleChange(event, "element6")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case7" className="DisplayCheckbox7"/><label for="case7" className="displaytodo7" >{json.element7} </label></div></Table.Cell><Table.Cell><Input for="case7" type='text' placeholder="Change task here" name="element7" className="displaytodo" id="case7" onChange={event => this.handleChange(event, "element7")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case7" className="DisplayCheckbox7" onClick={() => this.addE7InArray()} /><label for="case7" className="displaytodo7" >{json.element7} </label></div></Table.Cell><Table.Cell><Input for="case7" type='text' placeholder="Change task here" name="element7" className="displaytodo" id="case7" onChange={event => this.handleChange(event, "element7")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case8" className="DisplayCheckbox8"/><label for="case8" className="displaytodo8" >{json.element8} </label></div></Table.Cell><Table.Cell><Input for="case8" type='text' placeholder="Change task here" name="element8" className="displaytodo" id="case8" onChange={event => this.handleChange(event, "element8")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case8" className="DisplayCheckbox8" onClick={() => this.addE8InArray()} /><label for="case8" className="displaytodo8" >{json.element8} </label></div></Table.Cell><Table.Cell><Input for="case8" type='text' placeholder="Change task here" name="element8" className="displaytodo" id="case8" onChange={event => this.handleChange(event, "element8")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case9" className="DisplayCheckbox9"/><label for="case9" className="displaytodo9" >{json.element9} </label></div></Table.Cell><Table.Cell><Input for="case9" type='text' placeholder="Change task here" name="element9" className="displaytodo" id="case9" onChange={event => this.handleChange(event, "element9")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case9" className="DisplayCheckbox9" onClick={() => this.addE9InArray()} /><label for="case9" className="displaytodo9" >{json.element9} </label></div></Table.Cell><Table.Cell><Input for="case9" type='text' placeholder="Change task here" name="element9" className="displaytodo" id="case9" onChange={event => this.handleChange(event, "element9")} /></Table.Cell>
                                     </Table.Row>
                                     <Table.Row>
-                                    <Table.Cell><div><input type='checkbox' id="case10" className="DisplayCheckbox10"/><label for="case10" className="displaytodo10" >{json.element10} </label></div></Table.Cell><Table.Cell><Input for="case10" type='text' placeholder="Change task here" name="element10" className="displaytodo" id="case10" onChange={event => this.handleChange(event, "element10")} /></Table.Cell>
+                                    <Table.Cell><div><input type='checkbox' id="case10" className="DisplayCheckbox10" onClick={() => this.addE10InArray()} /><label for="case10" className="displaytodo10" >{json.element10} </label></div></Table.Cell><Table.Cell><Input for="case10" type='text' placeholder="Change task here" name="element10" className="displaytodo" id="case10" onChange={event => this.handleChange(event, "element10")} /></Table.Cell>
                                     </Table.Row>
+                                    {this.renderCompletedArray()}       
                                 </Table.Body>  
                             </Table>
                         </div>
@@ -190,12 +286,13 @@ import Noty from 'noty';
                 }  
                 <div className="displayUpdateButton"><Button className="ButtonSubmit" type="submit"><h4 className="Sauvegarder">SAVE</h4></Button></div>
                 </Form>
-
             </div>
-
+            
         )}
 
-    render() { 
+
+
+    render() {
         return ( 
             <div>
                {this.renderDisplayTodo1()}
