@@ -6,7 +6,6 @@ Cross out the task to be executed.
 ( in development)
 Function to come: 
 * Save crossed-out tasks
-* Fix problem of delete todo button
 
 
 ### Technos used

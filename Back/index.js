@@ -928,7 +928,7 @@ App.post('/updateTodo', (req ,res) => {
 
 App.post('/deleteToDo', (req, res) =>{
     console.log('req.body.delete', req.body);
-    const deleteTodo = ` DELETE FROM todolist1 WHERE id = ${mySql.escape(req.body.todos[0].idOne)}`
+    const deleteTodo = ` DELETE FROM todolist1 WHERE id = ${mySql.escape(req.body.id)}`
     config.query(deleteTodo, (err, resultDeleteTodo) => {
         if(err) {
             res.status(200).json(err)
